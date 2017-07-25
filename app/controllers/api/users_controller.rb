@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
          errors: @user.errors
        }, status: 500
      end
+   end
 
   private
     def user_params
