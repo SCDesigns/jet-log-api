@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :users
+    resources :users, only: [:create]
     resources :logs
     resources :locations
     resources :continents
