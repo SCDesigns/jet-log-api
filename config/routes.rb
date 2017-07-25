@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [:create]
     resources :logs
-    resources :locations
-    resources :continents
+    resources :locations, only: [:index]
+    resources :continents, only: [:index]
 
     # api/auth
     post '/auth', to: "auth#login"
