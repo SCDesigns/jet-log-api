@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :log do
-    title "MyString"
-    description "MyText"
-    user nil
-    location nil
+    title 'Parisian Paradise'
+    description 'This past week in Paris was like a dream...'
+    user
+    location
   end
 end
