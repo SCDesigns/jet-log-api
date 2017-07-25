@@ -9,7 +9,7 @@ class Api::LogsController < ApplicationController
     if @log.save
       render json: @log
     else
-      render json: { errors: { message: "This Log failed to save."}}
+      render json: { errors: { message: "This Log failed to save." }}
     end
   end
 
