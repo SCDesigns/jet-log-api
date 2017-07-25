@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     resources :logs
     resources :locations
     resources :continents
+
+    post '/auth', to: "auth#login"
   end
 end
