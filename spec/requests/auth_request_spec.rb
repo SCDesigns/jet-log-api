@@ -86,45 +86,45 @@ RSpec.describe "Api::Users", type: :request do
     end
   end
 
-#   describe "POST /auth/refresh" do
-#
-#      describe "on success" do
-#
-#       it "returns the existing user (from the headers JWT) and a new JWT token" do
-#         token = Auth.create_token(@user.id)
-#
-#         post "/api/auth/refresh",
-#           headers: {
-#             'Content-Type': 'application/json',
-#             'Authorization': "Bearer: #{token}"
-#           }
-#
-#         body = JSON.parse(response.body)
-#
-#         expect(response.status).to eq(200)
-#         expect(body['user']['id']).not_to eq(nil)
-#         expect(body['user']['email']).to eq('user@jetlog.com')
-#         expect(body['user']['password_digest']).to eq(nil)
-#         expect(body['token']).not_to eq(nil)
-#       end
-#     end
-#
-#     describe "on error" do
-#
-#       it "unable to find user with email" do
-#         token = 'abc.123.def.456'
-#
-#         post "/api/auth/refresh",
-#           headers: {
-#             'Content-Type': 'application/json',
-#             'Authorization': "Bearer: #{token}"
-#           }
-#
-#         body = JSON.parse(response.body)
-#
-#         expect(response.status).to eq(403)
-#         expect(body["errors"]).to eq([{ "message" => "Token is invalid!" }])
-#       end
-#     end
-#   end
+  describe "POST /auth/refresh" do
+
+     describe "on success" do
+
+      it "returns the existing user (from the headers JWT) and a new JWT token" do
+        token = Auth.create_token(@user.id)
+
+        post "/api/auth/refresh",
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer: #{token}"
+          }
+
+        body = JSON.parse(response.body)
+
+        expect(response.status).to eq(200)
+        expect(body['user']['id']).not_to eq(nil)
+        expect(body['user']['email']).to eq('user@jetlog.com')
+        expect(body['user']['password_digest']).to eq(nil)
+        expect(body['token']).not_to eq(nil)
+      end
+    end
+
+    describe "on error" do
+
+      it "unable to find user with email" do
+        token = 'abc.123.def.456'
+
+        post "/api/auth/refresh",
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer: #{token}"
+          }
+
+        body = JSON.parse(response.body)
+
+        expect(response.status).to eq(403)
+        expect(body["errors"]).to eq([{ "message" => "Token is invalid!" }])
+      end
+    end
+  end
 end
