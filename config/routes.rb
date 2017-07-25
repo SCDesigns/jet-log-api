@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :locations
     resources :continents
 
+    # api/auth
     post '/auth', to: "auth#login"
     post '/auth/refresh', to: "auth#refresh"
   end
