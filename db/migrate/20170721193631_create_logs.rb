@@ -3,8 +3,9 @@ class CreateLogs < ActiveRecord::Migration[5.0]
     create_table :logs do |t|
       t.string :title
       t.text :description
+      t.string :location
+      t.string :memory
       t.references :user, foreign_key: true
-      t.references :location, foreign_key: true
 
       t.timestamps
     end
