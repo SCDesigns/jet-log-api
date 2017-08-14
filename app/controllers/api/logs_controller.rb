@@ -1,5 +1,5 @@
 class Api::LogsController < ApplicationController
-  before_action :authenticate_token!, only: [:create, :update]
+  # before_action :authenticate_token!, only: [:create, :update]
 
   def index
     @logs = Log.all
@@ -32,6 +32,6 @@ class Api::LogsController < ApplicationController
 
   private
     def log_params
-      params.require(:log).permit(:title, :description, :location)
+      params.require(:log).permit(:title, :description, :location, :memory)
     end
 end

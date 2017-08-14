@@ -15,20 +15,14 @@ ActiveRecord::Schema.define(version: 20170721193631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "locations", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "logs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "location"
+    t.string   "memory"
     t.integer  "user_id"
-    t.integer  "location_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["location_id"], name: "index_logs_on_location_id", using: :btree
     t.index ["user_id"], name: "index_logs_on_user_id", using: :btree
   end
 
@@ -36,10 +30,10 @@ ActiveRecord::Schema.define(version: 20170721193631) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "avatar"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "logs", "locations"
   add_foreign_key "logs", "users"
 end
