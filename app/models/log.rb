@@ -1,7 +1,5 @@
 class Log < ApplicationRecord
-  belongs_to :user
-
-  mount_uploader :memory, LogUploader
+  # belongs_to :user
 
   validates :title, presence: true
   validates :description, presence: true

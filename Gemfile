@@ -23,8 +23,6 @@ gem 'dotenv-rails'
 gem 'jwt', '~> 1.5.6'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-# Allow users to upload Pictures (Profile & Log)
-gem 'carrierwave', '~> 1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
