@@ -1,5 +1,4 @@
 class Api::LogsController < ApplicationController
-  # before_action :authenticate_token!, only: [:create, :update]
 
   def index
     @logs = Log.all

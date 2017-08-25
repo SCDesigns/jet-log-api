@@ -22,7 +22,7 @@ class ApplicationController < ActionController::API
       else
         render json: {
           errors: [
-            { message: "You must include a JWT token!" }
+            { message: "You must sign up or login." }
           ]
         }, status: 403
       end
