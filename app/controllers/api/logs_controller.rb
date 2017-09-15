@@ -31,6 +31,6 @@ class Api::LogsController < ApplicationController
 
   private
     def log_params
-      params.require(:log).permit(:title, :description, :location, :memory)
+      params.require(:log).permit(:title, :description, :location, :latitude, :longitude, :memory)
     end
 end
