@@ -7,6 +7,7 @@ class CreateLogs < ActiveRecord::Migration[5.0]
       t.numeric :latitude, :precision => 10, :scale => 7
       t.numeric :longitude, :precision => 10, :scale => 7
       t.string :memory
+      t.integer :likes, :default => 0
       t.references :user, foreign_key: true
 
       t.timestamps

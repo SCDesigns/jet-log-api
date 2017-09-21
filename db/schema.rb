@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 20170721193631) do
     t.decimal  "latitude",    precision: 10, scale: 7
     t.decimal  "longitude",   precision: 10, scale: 7
     t.string   "memory"
+    t.integer  "likes",                                default: 0
     t.integer  "user_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.index ["user_id"], name: "index_logs_on_user_id", using: :btree
   end
 
